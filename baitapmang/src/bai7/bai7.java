@@ -11,7 +11,22 @@ public class bai7 {
         int n = sc.nextInt();
         int[] c = new int[n];
         taoMang(c, n);
-        int k = sc.nextInt();
+        int min =c[0],max=c[0];
+        int vtmin=0,vtmax=0;
+        for(int i = 0; i < n; ++i) {
+            if(min>c[i])
+            {
+                min=c[i];
+                vtmin=i;
+            }
+            if(max<c[i])
+            {
+                max=c[i];
+                vtmax=i;
+            }
+        }
+        System.out.println("MAX = "+max+" o vi tri "+vtmax);
+        System.out.println("MIN = "+min+" o vi tri "+vtmin);
     }
     public static void taoMang(int[] c, int n) {
         Scanner sc = new Scanner(System.in);
@@ -20,11 +35,5 @@ public class bai7 {
             c[i] = sc.nextInt();
         }
     }
-    public static void inMang(int[] c, int n) {
-        Scanner sc = new Scanner(System.in);
 
-        for(int i = 0; i < n; ++i) {
-            c[i] = sc.nextInt();
-        }
-    }
 }
