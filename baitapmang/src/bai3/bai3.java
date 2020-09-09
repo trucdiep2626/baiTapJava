@@ -14,17 +14,17 @@ public class bai3 {
         lietKeSNT(c, n);
     }
 
-    public static int laSNT(int a) {
+    public static boolean laSNT(int a) {
         if (a < 2) {
-            return 0;
+            return false;
         } else {
             for(int i = 2; i < a; ++i) {
                 if (a % i == 0) {
-                    return 0;
+                    return false;
                 }
             }
 
-            return 1;
+            return true;
         }
     }
 
@@ -39,7 +39,7 @@ public class bai3 {
 
     public static void lietKeSNT(int[] c, int n) {
         for(int i = 0; i < n; ++i) {
-            if (laSNT(c[i]) == 1) {
+            if (laSNT(c[i]) ) {
                 System.out.print(" " + c[i]);
             }
         }
