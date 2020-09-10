@@ -42,7 +42,6 @@ public class bai10 {
     }
     public static void taoMang(int[][] c, int n, int m) {
         Scanner sc = new Scanner(System.in);
-
         for(int i = 0; i < n; ++i) {
             for(int j = 0; j < m; ++j) {
                 c[i][j] = sc.nextInt();
