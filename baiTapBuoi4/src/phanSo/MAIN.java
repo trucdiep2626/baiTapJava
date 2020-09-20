@@ -10,9 +10,9 @@ public class MAIN {
         ps2.rutGon();
         ps1.in();
         ps2.in();
-        System.out.println(ps1.tuSo+"\\"+ps1.mauSo+"+"+ps2.tuSo+"\\"+ps2.mauSo+"=");ps1.cong(ps2);
-        System.out.println(ps1.tuSo+"\\"+ps1.mauSo+"-"+ps2.tuSo+"\\"+ps2.mauSo+"=");ps1.tru(ps2);
-        System.out.println(ps1.tuSo+"\\"+ps1.mauSo+"*"+ps2.tuSo+"\\"+ps2.mauSo+"=");ps1.nhan(ps2);
-        System.out.println(ps1.tuSo+"\\"+ps1.mauSo+"\\"+ps2.tuSo+"\\"+ps2.mauSo+"=");ps1.chia(ps2);
+        System.out.print(ps1.tuSo+"\\"+ps1.mauSo+"+"+ps2.tuSo+"\\"+ps2.mauSo+"=");ps1.cong(ps2);
+        System.out.print(ps1.tuSo+"\\"+ps1.mauSo+"-"+ps2.tuSo+"\\"+ps2.mauSo+"=");ps1.tru(ps2);
+        System.out.print(ps1.tuSo+"\\"+ps1.mauSo+"*"+ps2.tuSo+"\\"+ps2.mauSo+"=");ps1.nhan(ps2);
+        System.out.print(ps1.tuSo+"\\"+ps1.mauSo+"\\"+ps2.tuSo+"\\"+ps2.mauSo+"=");ps1.chia(ps2);
     }
 }
