@@ -81,9 +81,9 @@ public class MAIN {
         System.out.print("Nhap khoa : ");
         khoa=sc.nextLine();
         System.out.print("Nhap mon hoc : ");
-        String monHoc=sc.nextLine();
+         monHoc=sc.nextLine();
         System.out.print("Nhap nam kinh nghiem : ");
-        int namKinhNghiem=sc.nextInt();
+         namKinhNghiem=sc.nextInt();
         sc.nextLine();
         GiangVien gv2 = new GiangVien(ten,namSinh,queQuan,gioiTinh,khoa,monHoc,namKinhNghiem);
         if(sv1.getGioiTinh()==false)
