@@ -37,9 +37,9 @@ public class JFrameBai4 extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        rbtn1 = new javax.swing.JRadioButton();
-        rbtn2 = new javax.swing.JRadioButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        rbHTTT = new javax.swing.JRadioButton();
+        rbmATmA = new javax.swing.JRadioButton();
+        cbGioiTinh = new javax.swing.JComboBox<>();
         txtMaSV = new javax.swing.JTextField();
         txtTen = new javax.swing.JTextField();
         txtNgaySinh = new javax.swing.JTextField();
@@ -71,25 +71,36 @@ public class JFrameBai4 extends javax.swing.JFrame {
 
         jLabel9.setText("Học Phí");
 
-        buttonGroup1.add(rbtn1);
-        rbtn1.setText("Sinh Viên HTTT");
-        rbtn1.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(rbHTTT);
+        rbHTTT.setText("Sinh Viên HTTT");
+        rbHTTT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbtn1ActionPerformed(evt);
+                rbHTTTActionPerformed(evt);
             }
         });
 
-        buttonGroup1.add(rbtn2);
-        rbtn2.setText("Sinh Viên Mật Mã");
+        buttonGroup1.add(rbmATmA);
+        rbmATmA.setText("Sinh Viên Mật Mã");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        cbGioiTinh.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ" }));
+        cbGioiTinh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                cbGioiTinhActionPerformed(evt);
+            }
+        });
+
+        txtMaSV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMaSVActionPerformed(evt);
             }
         });
 
         btnThem.setText("Thêm ");
+        btnThem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThemActionPerformed(evt);
+            }
+        });
 
         btnLuu.setText("Lưu");
 
@@ -101,9 +112,9 @@ public class JFrameBai4 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(76, 76, 76)
-                        .addComponent(rbtn1)
+                        .addComponent(rbHTTT)
                         .addGap(18, 18, 18)
-                        .addComponent(rbtn2))
+                        .addComponent(rbmATmA))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -125,7 +136,7 @@ public class JFrameBai4 extends javax.swing.JFrame {
                                 .addComponent(txtNgaySinh, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txtTen, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbGioiTinh, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(txtMaSV, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(txtDiemTB, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE))
@@ -158,15 +169,15 @@ public class JFrameBai4 extends javax.swing.JFrame {
                 .addGap(5, 5, 5)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbGioiTinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(txtDiemTB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(5, 5, 5)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbtn1)
-                    .addComponent(rbtn2))
+                    .addComponent(rbHTTT)
+                    .addComponent(rbmATmA))
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -189,13 +200,34 @@ public class JFrameBai4 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void cbGioiTinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbGioiTinhActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_cbGioiTinhActionPerformed
 
-    private void rbtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtn1ActionPerformed
+    private void rbHTTTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbHTTTActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rbtn1ActionPerformed
+    }//GEN-LAST:event_rbHTTTActionPerformed
+
+    private void txtMaSVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaSVActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMaSVActionPerformed
+
+    private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
+        double diemTB = Double.valueOf(txtDiemTB.getText());
+        String hoTen=txtTen.getText();
+        String maSV = txtMaSV.getText();
+        String ngaySinh = txtNgaySinh.getText();
+        String gioiTinh = cbGioiTinh.getSelectedItem().toString();
+        if(rbHTTT.isSelected()==true)
+        {
+            double hocPhi=Double.valueOf(txtHocPhi.getText());
+       
+                
+        dsSinhVienHTTTs.add(svhttt);
+        svhttt.xuat();
+        System.out.println(dsSinhVienHTTTs);
+        }
+    }//GEN-LAST:event_btnThemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,7 +268,7 @@ public class JFrameBai4 extends javax.swing.JFrame {
     private javax.swing.JButton btnLuu;
     private javax.swing.JButton btnThem;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cbGioiTinh;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -246,8 +278,8 @@ public class JFrameBai4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton rbtn1;
-    private javax.swing.JRadioButton rbtn2;
+    private javax.swing.JRadioButton rbHTTT;
+    private javax.swing.JRadioButton rbmATmA;
     private javax.swing.JTextField txtDiemTB;
     private javax.swing.JTextField txtDonVi;
     private javax.swing.JTextField txtHocPhi;
