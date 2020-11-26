@@ -5,13 +5,15 @@
  */
 package bai2;
 
+import java.util.Date;
+
 /**
  *
  * @author admin
  */
 public class People {
     private String hoTen;
-      private String ngaySinh;
+      private Date ngaySinh;
       private String diaChi;
       private String gioiTinh;
 
@@ -24,20 +26,22 @@ public class People {
 
     @Override
     public String toString() {
-        return "People{" + "hoTen=" + hoTen + ", ngaySinh=" + ngaySinh + ", diaChi=" + diaChi + ", gioiTinh=" + gioiTinh + '}';
+        return  "hoTen=" + hoTen + ", ngaySinh=" + ngaySinh + ", diaChi=" + diaChi + ", gioiTinh=" + gioiTinh + '}';
     }
 
     public void setHoTen(String hoTen) {
         this.hoTen = hoTen;
     }
 
-    public String getNgaySinh() {
+    public Date getNgaySinh() {
         return ngaySinh;
     }
 
-    public void setNgaySinh(String ngaySinh) {
+    public void setNgaySinh(Date ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
+
+   
 
     public String getDiaChi() {
         return diaChi;
@@ -55,12 +59,14 @@ public class People {
         this.gioiTinh = gioiTinh;
     }
 
-    public People(String hoTen, String ngaySinh, String diaChi, String gioiTinh) {
+    public People(String hoTen, Date ngaySinh, String diaChi, String gioiTinh) {
         this.hoTen = hoTen;
         this.ngaySinh = ngaySinh;
         this.diaChi = diaChi;
         this.gioiTinh = gioiTinh;
     }
+
+
     public void xuat()
     {
         System.out.println(this.toString());

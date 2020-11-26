@@ -10,7 +10,11 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -185,19 +189,48 @@ public class Form extends javax.swing.JFrame {
     }//GEN-LAST:event_txtMaSVActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-        double diemTK = Double.valueOf(txtDiemTK.getText());
+      if(txtDiaChi.getText().compareTo("")==0 || txtDiemTK.getText().compareTo("")==0 ||txtEmail.getText().compareTo("")==0 ||txtMaSV.getText().compareTo("")==0 ||txtNgaySinh.getText().compareTo("")==0 ||txtTen.getText().compareTo("")==0 ||cbGioiTinh.getSelectedItem()==null)
+      {
+          JOptionPane.showMessageDialog(null, "Thông tin chưa nhập đủ");
+      }
+      else
+      {
+        String mess="";
+        boolean hopLe=true;
+        double diemTK=0 ;
+        try {
+        diemTK= Double.valueOf(txtDiemTK.getText());
+        }
+        catch (NumberFormatException numberFormatException) {
+            mess+="Diem khong hop le";
+             hopLe=false;
+        }
+          SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String hoTen=txtTen.getText();
         String maSV = txtMaSV.getText();
-        String ngaySinh = txtNgaySinh.getText();
+        Date ngaySinh = null;
+        sdf.setLenient(false);
+        sdf.applyPattern("dd/MM/yyyy");
+          try {
+              ngaySinh=sdf.parse(txtNgaySinh.getText());
+          } catch (ParseException e) {
+              mess+="Ngày không hợp lệ \n";
+              hopLe=false;
+          }
         String gioiTinh = cbGioiTinh.getSelectedItem().toString();
          String email= txtEmail.getText();
          String diaChi=txtDiaChi.getText();
-       Student sv= new Student( maSV,  email,  diemTK, hoTen, ngaySinh, diaChi, gioiTinh);
-                
-        dssv.add(sv);
-        sv.xuat();
-        System.out.println(dssv);
-        
+          if (hopLe) {
+                Student sv= new Student(maSV, email, diemTK, hoTen, ngaySinh, diaChi, gioiTinh);
+                 dssv.add(sv);
+                 sv.xuat();
+          }
+          else
+          {
+              JOptionPane.showMessageDialog(null, mess);
+          }
+       // System.out.println(dssv);
+      }
       
         
     }//GEN-LAST:event_btnThemActionPerformed

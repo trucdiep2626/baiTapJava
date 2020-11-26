@@ -5,6 +5,8 @@
  */
 package bai3;
 
+import java.util.Date;
+
 /**
  *
  * @author admin
@@ -58,7 +60,7 @@ public double tinhLuong()
     public NhanVien() {
     }
 
-    public NhanVien(String phongBan, double heSoLuong, int thamNien, int luongCB, String hoTen, String ngaySinh, String diaChi, String gioiTinh) {
+    public NhanVien(String phongBan, double heSoLuong, int thamNien, int luongCB, String hoTen, Date ngaySinh, String diaChi, String gioiTinh) {
         super(hoTen, ngaySinh, diaChi, gioiTinh);
         this.phongBan = phongBan;
         this.heSoLuong = heSoLuong;

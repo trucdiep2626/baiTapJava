@@ -11,7 +11,11 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -208,22 +212,69 @@ public class Form extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPhongActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-        double heSo = Double.valueOf(txtHeso.getText());
+        if(txtThamnien.getText().compareTo("")==0 || txtDiaChi.getText().compareTo("")==0 ||txtThamnien.getText().compareTo("")==0 || txtLuongCB.getText().compareTo("")==0 ||txtNgaySinh.getText().compareTo("")==0 ||txtTen.getText().compareTo("")==0||txtPhong.getText().compareTo("")==0 ||cbGioiTinh.getSelectedItem()==null)
+      {
+          JOptionPane.showMessageDialog(null, "Thông tin chưa nhập đủ");
+      }
+      else
+      {
+        double heSo =0;
+        String mess="";
+        boolean hopLe=true;
+          try {
+              heSo=Double.valueOf(txtHeso.getText());
+          } catch (NumberFormatException e) {
+              mess+="Hệ số không hợp lệ";
+              hopLe=false;
+          }
+
         String hoTen=txtTen.getText();
         String phongBan = txtPhong.getText();
-        String ngaySinh = txtNgaySinh.getText();
+         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Date ngaySinh = null;
+        sdf.setLenient(false);
+        sdf.applyPattern("dd/MM/yyyy");
+          try {
+              ngaySinh=sdf.parse(txtNgaySinh.getText());
+          } catch (ParseException e) {
+              mess+="Ngày không hợp lệ \n";
+              hopLe=false;
+          }
         String gioiTinh = cbGioiTinh.getSelectedItem().toString();
         String diaChi=txtDiaChi.getText();
-         int thamNien= Integer.getInteger(txtThamnien.getText());
-         int luongCB=Integer.getInteger(txtLuongCB.getText());
+         int thamNien= 0;
+         
+         try
+         {
+             thamNien=Integer.parseInt(txtThamnien.getText());
+         }catch(NumberFormatException e)
+         {
+             mess+="Số không hợp lệ \n";
+              hopLe=false;
+         }
+         int luongCB=0;
+         try
+         {
+             luongCB=Integer.parseInt(txtLuongCB.getText());
+         }catch(NumberFormatException e)
+         {
+             mess+="Số không hợp lệ \n";
+              hopLe=false;
+         }
+         
+         if (hopLe) {
        NhanVien nv= new NhanVien( phongBan,  heSo,thamNien,luongCB,  hoTen, ngaySinh,diaChi,gioiTinh);
                 
         dsnv.add(nv);
         nv.xuat();
-        System.out.println(dsnv);
-        
-      
-        
+       // System.out.println(dsnv);
+      }    
+       
+          else
+          {
+              JOptionPane.showMessageDialog(null, mess);
+          } 
+      }
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnLuuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuuActionPerformed

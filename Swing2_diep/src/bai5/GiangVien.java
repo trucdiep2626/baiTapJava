@@ -29,7 +29,7 @@ public class GiangVien {
 
     @Override
     public String toString() {
-        return "GiangVien{" + "maGV=" + maGV + ", hoTen=" + hoTen + ", diaChi=" + diaChi + ", khoa=" + khoa + ", gioiTinh=" + gioiTinh + '}';
+        return "GiangVien{" + "maGV=" + maGV + ", hoTen=" + hoTen + ", diaChi=" + diaChi + ", khoa=" + khoa + ", gioiTinh=" + gioiTinh + '}'+"\n";
     }
     
             

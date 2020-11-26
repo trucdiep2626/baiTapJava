@@ -5,6 +5,8 @@
  */
 package bai2;
 
+import java.util.Date;
+
 /**
  *
  * @author admin
@@ -14,12 +16,14 @@ public class Student extends People{
       private String email;
       private double diemTK;
 
-    public Student(String maSV, String email, double diemTK, String hoTen, String ngaySinh, String diaChi, String gioiTinh) {
+    public Student(String maSV, String email, double diemTK, String hoTen, Date ngaySinh, String diaChi, String gioiTinh) {
         super(hoTen, ngaySinh, diaChi, gioiTinh);
         this.maSV = maSV;
         this.email = email;
         this.diemTK = diemTK;
     }
+
+   
 
     @Override
     public String toString() {

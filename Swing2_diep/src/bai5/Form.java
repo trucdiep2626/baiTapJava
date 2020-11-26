@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -185,7 +186,13 @@ public class Form extends javax.swing.JFrame {
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void btnLuuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuuActionPerformed
-       String maGV=txtMaGV.getText();
+      if(txtDiaChi.getText().compareTo("")==0 || txtMaGV.getText().compareTo("")==0 ||txtTen.getText().compareTo("")==0 ||cbGioiTinh.getSelectedItem()==null || cbKhoa.getSelectedItem()==null)
+        {
+          JOptionPane.showMessageDialog(null, "Thông tin chưa nhập đủ");
+      }
+      else
+      {
+          String maGV=txtMaGV.getText();
        String hoTen=txtTen.getText();
        String diaChi=txtDiaChi.getText();
        String khoa=cbKhoa.getSelectedItem().toString();
@@ -204,7 +211,7 @@ public class Form extends javax.swing.JFrame {
             
         }
         
-       
+      }
     }//GEN-LAST:event_btnLuuActionPerformed
 
     private void cbKhoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbKhoaActionPerformed

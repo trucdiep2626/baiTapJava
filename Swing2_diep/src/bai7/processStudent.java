@@ -38,7 +38,9 @@ public class processStudent {
             BufferedWriter bw= new BufferedWriter(fw);
             for(int i=0;i<dssv.size();i++)
             {
-            bw.write(dssv.get(i).toString());
+            bw.write(dssv.get(i).getHoTen()+"\n");
+            bw.write(dssv.get(i).getTuoi()+"\n");
+           
             }
             bw.close();
             fw.close();
@@ -47,7 +49,7 @@ public class processStudent {
         }
         
     }
-    public void docFile(String [] danhSach,int n)
+    public void docFile(ArrayList danhSach,int n)
     {
         try{
             File f = new File("dsat.dat");
@@ -55,9 +57,13 @@ public class processStudent {
             BufferedReader br= new BufferedReader(fr);
             String line;
             int i=0;
-            while ((line = br.readLine()) != null){
-                danhSach[i]=br.readLine();
-                i++;
+            for ( i = 0; i < n; i++) {
+                
+            Student sv = new Student();
+            sv.setHoTen(br.readLine());
+            sv.setTuoi(Integer.parseInt(br.readLine()));
+             danhSach.add(sv);
+                
               }
             br.close();
             fr.close();
@@ -66,10 +72,10 @@ public class processStudent {
         }
         
     }
-    public void xuatSV(String [] danhSach,int n)
+    public void xuatSV(ArrayList danhSach,int n)
     {
         for (int i = 0; i < n; i++) {
-            System.out.println(danhSach[i]);
+            System.out.println(danhSach.get(i).toString());
         }
     }
 }

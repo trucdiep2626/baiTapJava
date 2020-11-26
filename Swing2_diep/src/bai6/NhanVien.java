@@ -6,6 +6,7 @@
 package bai6;
 
 import bai3.*;
+import java.util.Date;
 
 /**
  *
@@ -66,7 +67,7 @@ public double tinhLuong()
         return "NhanVien{" +super.toString()+ "phongBan=" + phongBan + ", heSoLuong=" + heSoLuong + ", thamNien=" + thamNien + ", luongCB=" + luongCB + ", luongThuc=" + luongThuc + '}';
     }
 
-    public NhanVien(String phongBan, double heSoLuong, int thamNien, int luongCB, double luongThuc, String hoTen, String ngaySinh, String diaChi, String gioiTinh) {
+    public NhanVien(String phongBan, double heSoLuong, int thamNien, int luongCB, double luongThuc, String hoTen, Date ngaySinh, String diaChi, String gioiTinh) {
         super(hoTen, ngaySinh, diaChi, gioiTinh);
         this.phongBan = phongBan;
         this.heSoLuong = heSoLuong;
