@@ -6,6 +6,7 @@ public class MAIN {
         phanSo ps2 = new phanSo();
         ps1.nhap();
         ps2.nhap();
+        System.out.println("phan so rut gon : ");
         ps1.rutGon();
         ps2.rutGon();
         ps1.in();
