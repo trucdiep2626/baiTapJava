@@ -21,3 +21,14 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/giaide/De3_SinhVienLopHoc/nbproject/private/
+/giaide/De3_SinhVienLopHoc/build/
+/giaide/De4_PersonNhanVien/nbproject/private/
+/giaide/De10_GiangVien/nbproject/private/
+/giaide/De10_GiangVien/build/
+/giaide/De5_PersonNhanVien/nbproject/private/
+/giaide/De5_PersonNhanVien/build/
+/giaide/De6_Number/nbproject/private/
+/giaide/De6_Number/build/
+/giaide/De8_Cauthu/nbproject/private/
+/giaide/De8_Cauthu/build/
