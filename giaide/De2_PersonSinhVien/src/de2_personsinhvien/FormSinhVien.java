@@ -256,9 +256,14 @@ public class FormSinhVien extends javax.swing.JFrame {
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnLuuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuuActionPerformed
-        try {
+        if(dssv.isEmpty())
+        {
+            JOptionPane.showMessageDialog(this, "Vui lòng thêm thông tin trước");
+        }else
+        {
+            try {
             File f = new File("dssv.dat");
-            FileWriter fw = new FileWriter(f);
+            FileWriter fw = new FileWriter(f,true);
             BufferedWriter bw = new BufferedWriter(fw);
             for (SinhVien sinhVien : dssv) {
                 bw.write(sinhVien.toString());
@@ -266,9 +271,11 @@ public class FormSinhVien extends javax.swing.JFrame {
             }
             bw.close();
             fw.close();
+            dssv.clear();
             JOptionPane.showMessageDialog(this, "Lưu thông tin thành công");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Lưu thông tin không thành công");
+        }
         }
     }//GEN-LAST:event_btnLuuActionPerformed
 

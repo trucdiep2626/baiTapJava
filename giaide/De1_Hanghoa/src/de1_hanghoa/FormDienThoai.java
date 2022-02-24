@@ -280,9 +280,14 @@ public class FormDienThoai extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        try {
+        if(dsdt.isEmpty())
+        {
+             JOptionPane.showMessageDialog(this, "Vui lòng nhập dữ liệu trước");
+        }else
+        {
+            try {
             File f = new File("dsdt.dat");
-            FileWriter fw = new FileWriter(f);
+            FileWriter fw = new FileWriter(f,true);
             BufferedWriter bw = new BufferedWriter(fw);
             for (DienThoai dienThoai : dsdt) {
                 bw.write(dienThoai.toString());
@@ -290,9 +295,11 @@ public class FormDienThoai extends javax.swing.JFrame {
             }
             bw.close();
             fw.close();
+            dsdt.clear();
             JOptionPane.showMessageDialog(this, "Lưu dữ liệu thành công");
         } catch (IOException o) {
             JOptionPane.showMessageDialog(this, "Lưu dữ liệu không thành công");
+        }
         }
     }//GEN-LAST:event_btnSaveActionPerformed
 
