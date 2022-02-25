@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.Action;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -242,7 +243,6 @@ public class FormNhanVien extends javax.swing.JFrame {
             boolean hopLe = true;
             String message = "";
             double heSoLuong = 0;
-
             Date ngaySinh = null;
             try {
                 heSoLuong = Double.valueOf(txtHSLuong.getText().trim());
@@ -280,6 +280,7 @@ public class FormNhanVien extends javax.swing.JFrame {
         ArrayList<NhanVien> dsnv = new ArrayList<>();
         try {
             File f = new File("nhanvien.dat");
+            
             FileReader fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);
 
