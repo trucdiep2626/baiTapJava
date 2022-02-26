@@ -30,7 +30,16 @@ public class Dictionary {
     }
 
     public void sapXep() {
-        tuDien.sort(Comparator.comparing(Word::getEn));
+        //tuDien.sort(Comparator.comparing(Word::getEn));
+        for (int i = 0; i < tuDien.size()-1; i++) {
+            for (int j = i+1; j < tuDien.size(); j++) {
+                Word w1 = new Word(tuDien.get(i).getId(), tuDien.get(i).getEn(),tuDien.get(i).getVn());
+                Word w2 = new Word(tuDien.get(j).getId(), tuDien.get(j).getEn(),tuDien.get(j).getVn());
+                if (tuDien.get(i).getEn().compareTo(tuDien.get(j).getVn()) >0) {
+                    
+                }
+            }
+        }
     }
 
     public String timKiem(String en) {

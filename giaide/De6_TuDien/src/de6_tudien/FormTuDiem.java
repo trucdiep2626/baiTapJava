@@ -187,7 +187,7 @@ public class FormTuDiem extends javax.swing.JFrame {
         lbEn.setVisible(false);
         lbVn.setVisible(false);
         if (txtTimKiem.getText().trim().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Vui lòng nhập từ cần tìm");
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập từ cần tìm");
         } else {
             String ketQua = "";
             ketQua = dictionary.timKiem(txtTimKiem.getText().trim());
